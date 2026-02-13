@@ -1,0 +1,54 @@
+[
+  {
+    "id": "proj-1",
+    "title": "DevDash",
+    "status": "Shipped",
+    "description": "A real-time developer dashboard aggregating GitHub, CI/CD, and deployment metrics into a single view.",
+    "stack": ["Next.js", "TypeScript", "WebSockets", "PostgreSQL"],
+    "links": {
+      "github": "https://github.com/yourusername/devdash",
+      "demo": "https://devdash.example.com"
+    }
+  },
+  {
+    "id": "proj-2",
+    "title": "MarkdownCMS",
+    "status": "Shipped",
+    "description": "A lightweight headless CMS that uses Markdown files as the content source with a live preview editor.",
+    "stack": ["React", "Node.js", "MDX", "SQLite"],
+    "links": {
+      "github": "https://github.com/yourusername/markdowncms",
+      "readme": "https://github.com/yourusername/markdowncms#readme"
+    }
+  },
+  {
+    "id": "proj-3",
+    "title": "A11y Audit Tool",
+    "status": "In progress",
+    "description": "An automated accessibility auditing CLI that generates detailed WCAG compliance reports for any URL.",
+    "stack": ["TypeScript", "Puppeteer", "Node.js", "CLI"],
+    "links": {
+      "github": "https://github.com/yourusername/a11y-audit"
+    }
+  },
+  {
+    "id": "proj-4",
+    "title": "Neural Style API",
+    "status": "R&D",
+    "description": "Experimenting with neural style transfer as a REST API — upload an image, get it transformed in real time.",
+    "stack": ["Python", "FastAPI", "PyTorch", "Docker"],
+    "links": {
+      "available_on_request": true
+    }
+  },
+  {
+    "id": "proj-5",
+    "title": "Portfolio v2",
+    "status": "Shipped",
+    "description": "This very site — built with Next.js App Router, CSS Modules, dark mode, and zero UI dependencies.",
+    "stack": ["Next.js", "TypeScript", "CSS Modules"],
+    "links": {
+      "github": "https://github.com/yourusername/portfolio"
+    }
+  }
+]
