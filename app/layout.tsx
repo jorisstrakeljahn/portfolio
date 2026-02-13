@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Joris Strakeljahn — Builder, Hacker, Freelancer",
+  title: "Joris Strakeljahn",
   description:
     "Personal portfolio of Joris Strakeljahn — indie hacker, freelancer, and student turning ideas into real things on the internet.",
   keywords: ["developer", "portfolio", "indie hacker", "freelancer", "react", "typescript", "next.js"],
   authors: [{ name: "Joris Strakeljahn" }],
   openGraph: {
-    title: "Joris Strakeljahn — Builder, Hacker, Freelancer",
+    title: "Joris Strakeljahn",
     description: "Indie hacker, freelancer, and student turning ideas into real things on the internet.",
     type: "website",
     locale: "en_US",
