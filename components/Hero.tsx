@@ -68,10 +68,13 @@ export default function Hero() {
 
           <p className={styles.age}>
             Been here for{" "}
-            <span className={styles.counter} aria-live="off">
+            <span className={styles.counter} aria-hidden="true">
               {years ?? "…"}
-            </span>{" "}
-            years
+            </span>
+            <span className="sr-only">
+              {years ? `${Math.floor(parseFloat(years))}` : "22"} years
+            </span>
+            <span aria-hidden="true"> years</span>
           </p>
 
           <p className={styles.description}>

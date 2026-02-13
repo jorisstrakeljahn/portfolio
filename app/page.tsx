@@ -29,11 +29,51 @@ interface Project {
 
 const typedProjects: Project[] = projectsData as Project[];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "Joris Strakeljahn",
+      url: "https://jorisstrakeljahn.com",
+      description:
+        "Personal portfolio of Joris Strakeljahn — indie hacker, freelancer, and student building products on the internet.",
+    },
+    {
+      "@type": "Person",
+      name: "Joris Strakeljahn",
+      url: "https://jorisstrakeljahn.com",
+      jobTitle: "Full-Stack Developer & Indie Hacker",
+      email: "joris.strakeljahn@web.de",
+      image: "https://jorisstrakeljahn.com/images/portrait.png",
+      sameAs: [
+        "https://github.com/jorisstrakeljahn",
+        "https://www.linkedin.com/in/joris-strakeljahn/",
+        "https://x.com/jstrakeljahnx",
+      ],
+      knowsAbout: [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Web Development",
+        "Software Engineering",
+      ],
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <a href="#main-content" className="skipLink">
+        Skip to content
+      </a>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
 
         <ExperienceSection

@@ -19,6 +19,28 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile nav is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  // Close mobile nav on Escape key
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [mobileOpen]);
+
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
   return (
@@ -46,7 +68,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}
-            aria-label="LinkedIn profile"
+            aria-label="LinkedIn profile (opens in new tab)"
             title="LinkedIn"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -59,7 +81,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}
-            aria-label="X profile"
+            aria-label="X profile (opens in new tab)"
             title="X (Twitter)"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -72,7 +94,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}
-            aria-label="GitHub profile"
+            aria-label="GitHub profile (opens in new tab)"
             title="GitHub"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

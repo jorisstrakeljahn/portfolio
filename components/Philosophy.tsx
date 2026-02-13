@@ -342,15 +342,19 @@ export default function Philosophy() {
 
       {/* RIGHT: Interactive Code Card */}
       <div className={styles.right}>
-        <div className={styles.card}>
+        <div
+          className={styles.card}
+          role="img"
+          aria-label={`Decorative code animation showing a build_product function in ${currentSnippet.lang}`}
+        >
           <div className={styles.cardHeader}>
             <div className={styles.dots} aria-hidden="true">
               <span className={styles.dot} />
               <span className={styles.dot} />
               <span className={styles.dot} />
             </div>
-            <span className={styles.filename}>{currentSnippet.filename}</span>
-            <div className={styles.langTabs}>
+            <span className={styles.filename} aria-hidden="true">{currentSnippet.filename}</span>
+            <div className={styles.langTabs} role="tablist" aria-label="Programming language">
               {SNIPPETS.map((s, i) => (
                 <button
                   key={s.lang}
@@ -359,6 +363,8 @@ export default function Philosophy() {
                   }`}
                   onClick={() => switchLang(i)}
                   type="button"
+                  role="tab"
+                  aria-selected={i === activeIndex}
                   aria-label={`Show ${s.lang} code`}
                 >
                   {s.lang}
@@ -366,7 +372,7 @@ export default function Philosophy() {
               ))}
             </div>
           </div>
-          <pre className={styles.code}>
+          <pre className={styles.code} aria-hidden="true">
             <code>
               {renderCode()}
               {isTyping && (

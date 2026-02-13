@@ -20,7 +20,7 @@
 /* ===== Subtitle ===== */
 .subtitle {
   font-size: var(--text-xl);
-  color: #8a8a98;
+  color: #6b6b78;
   font-weight: 500;
   letter-spacing: -0.01em;
   margin-bottom: var(--space-5);
