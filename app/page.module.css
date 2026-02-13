@@ -50,6 +50,48 @@
 /* ===== White Zone: white page bg from mid-transition downward ===== */
 .whiteZone {
   background: linear-gradient(to bottom, transparent 10vw, #ffffff 20vw);
+  position: relative;
+  overflow: clip;
+}
+
+/* ===== Floating Islands — Light Section ===== */
+.floatingIsland {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0.8;
+  will-change: transform;
+}
+
+.islandLight1 {
+  width: clamp(420px, 48vw, 780px);
+  right: -10%;
+  top: 17%;
+  animation: floatLight1 9s ease-in-out infinite;
+}
+
+.islandLight2 {
+  width: clamp(380px, 44vw, 700px);
+  left: -12%;
+  bottom: -10%;
+  animation: floatLight2 11s ease-in-out infinite;
+}
+
+@keyframes floatLight1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes floatLight2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floatingIsland {
+    animation: none !important;
+  }
 }
 
 /* Projects Section: transparent so transition image shows through */
@@ -90,6 +132,18 @@
     height: 40vw;
     margin-top: -4rem;
     margin-bottom: -8vw;
+  }
+
+  .islandLight1 {
+    width: 340px;
+    right: -14%;
+    opacity: 0.6;
+  }
+
+  .islandLight2 {
+    width: 300px;
+    left: -16%;
+    opacity: 0.6;
   }
 }
 

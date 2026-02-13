@@ -52,6 +52,22 @@ export default function Home() {
             <div className={styles.transitionFade} />
           </div>
 
+          {/* Floating islands — light section decoration */}
+          <img
+            src="/images/island-light-1.png"
+            alt=""
+            aria-hidden="true"
+            className={`${styles.floatingIsland} ${styles.islandLight1}`}
+            draggable={false}
+          />
+          <img
+            src="/images/island-light-2.png"
+            alt=""
+            aria-hidden="true"
+            className={`${styles.floatingIsland} ${styles.islandLight2}`}
+            draggable={false}
+          />
+
           <Section id="projects" light className={styles.projectsSection}>
             <div className={styles.projectsHeader}>
               <h2 className={styles.projectsTitle}>
