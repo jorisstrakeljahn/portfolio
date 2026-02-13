@@ -4,7 +4,7 @@ import ExperienceSection from "@/components/ExperienceSection";
 import Section from "@/components/Section";
 import Philosophy from "@/components/Philosophy";
 import ProjectsSection from "@/components/ProjectsSection";
-import ContactForm from "@/components/ContactForm";
+import GetInTouch from "@/components/GetInTouch";
 import Footer from "@/components/Footer";
 
 import cvData from "@/content/experience.json";
@@ -64,12 +64,10 @@ export default function Home() {
             <ProjectsSection projects={typedProjects} />
           </Section>
 
-          <Section id="contact" title="Get in Touch" subtitle="Have a project in mind? Let's talk." light>
-            <ContactForm />
-          </Section>
+          <GetInTouch />
+          <Footer />
         </div>
       </main>
-      <Footer />
     </>
   );
 }
