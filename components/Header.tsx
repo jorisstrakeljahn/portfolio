@@ -4,9 +4,9 @@ import { useState, useEffect, useCallback } from "react";
 import styles from "./Header.module.css";
 
 const NAV_ITEMS = [
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : styles.top}`}>
       <div className={`container ${styles.inner}`}>
-        <a href="#" className={styles.logo} aria-label="Back to top">
+        <a href="/" className={styles.logo} aria-label="Back to top">
           <span className={styles.logoMark}>&lt;/&gt;</span>
         </a>
 
