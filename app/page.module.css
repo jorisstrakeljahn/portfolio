@@ -68,6 +68,7 @@
   width: clamp(420px, 48vw, 780px);
   right: -10%;
   top: 17%;
+  z-index: 5;
   animation: floatLight1 9s ease-in-out infinite;
 }
 
