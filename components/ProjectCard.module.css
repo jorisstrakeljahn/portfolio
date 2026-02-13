@@ -13,52 +13,12 @@
   overflow: hidden;
 }
 
-/* Soft diagonal shimmer — loops on hover, clipped by card */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    115deg,
-    transparent 0%,
-    transparent 25%,
-    rgba(255, 255, 255, 0.05) 38%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.05) 62%,
-    transparent 75%,
-    transparent 100%
-  );
-  background-size: 250% 100%;
-  background-position: 100% 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
 .card:hover {
   border-color: var(--color-border-hover);
   box-shadow:
     0 4px 24px rgba(0, 0, 0, 0.06),
     0 0 0 1px var(--color-border-hover);
   transform: translateY(-3px);
-}
-
-.card:hover::before {
-  animation: shimmer 2.8s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card:hover::before {
-    animation: none;
-  }
 }
 
 /* ===== Header (title + badge) ===== */
