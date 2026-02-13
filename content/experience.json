@@ -1,43 +1,70 @@
-[
-  {
-    "id": "exp-1",
-    "role": "Senior Frontend Engineer",
-    "company": "Acme Corp",
-    "location": "Berlin, Germany",
-    "startDate": "2023-01",
-    "endDate": null,
-    "bullets": [
-      "Led migration from legacy CRA app to Next.js App Router, reducing bundle size by 40%.",
-      "Built a component library with full accessibility compliance (WCAG 2.1 AA).",
-      "Mentored two junior engineers through structured pairing sessions."
-    ],
-    "tech": ["Next.js", "TypeScript", "React", "Node.js", "PostgreSQL"]
-  },
-  {
-    "id": "exp-2",
-    "role": "Frontend Developer",
-    "company": "StartupXYZ",
-    "location": "Remote",
-    "startDate": "2021-03",
-    "endDate": "2022-12",
-    "bullets": [
-      "Shipped a real-time dashboard serving 10k+ daily active users.",
-      "Integrated WebSocket-based live data feeds with graceful fallback.",
-      "Reduced Lighthouse performance score regressions by implementing automated CI checks."
-    ],
-    "tech": ["React", "TypeScript", "WebSockets", "D3.js", "AWS"]
-  },
-  {
-    "id": "exp-3",
-    "role": "Junior Web Developer",
-    "company": "Digital Agency Co",
-    "location": "Hamburg, Germany",
-    "startDate": "2019-06",
-    "endDate": "2021-02",
-    "bullets": [
-      "Developed responsive marketing sites for 15+ clients using modern CSS and vanilla JS.",
-      "Introduced Git-based workflows and code review culture to the team."
-    ],
-    "tech": ["JavaScript", "HTML/CSS", "WordPress", "PHP", "Git"]
-  }
-]
+{
+  "experience": [
+    {
+      "id": "exp-freelance",
+      "date": "Since Jan 2026",
+      "now": true,
+      "role": "Independent Software Developer",
+      "company": "Self-employed",
+      "location": "Remote",
+      "description": "Mostly building my own products and ideas — turning concepts into real, shipped software. On the side, freelance development and consulting for small to mid-sized projects.",
+      "tech": ["Next.js", "TypeScript", "React", "Java", "Rust", "PostgreSQL", "AI/RAG"]
+    },
+    {
+      "id": "exp-blockchain",
+      "date": "Dec 2024 – Feb 2026",
+      "now": false,
+      "role": "Student → Research Assistant",
+      "company": "Blockchain Working Group · Hochschule Bielefeld",
+      "location": "Bielefeld, Germany",
+      "description": "Started as a student assistant, promoted to research assistant. Built blockchain application concepts, smart contracts, and an NFT collectible game on the Q-Blockchain. Integrated a Gas Station Network for gasless transactions.",
+      "tech": ["Solidity", "Smart Contracts", "Web3", "TypeScript", "Q-Blockchain"]
+    },
+    {
+      "id": "exp-hoermann",
+      "date": "Aug 2022 – Dec 2025",
+      "now": false,
+      "role": "Dual Student → Full-Stack Developer",
+      "company": "Hörmann KG Verkaufsgesellschaft",
+      "location": "Steinhagen, Germany",
+      "description": "3+ years from dual studies to full-stack role. Enhanced the company's e-commerce platform, introduced QA and test automation, built a product knowledge graph, and developed a multi-agent RAG chatbot for product consulting.",
+      "tech": ["Python", "Java", "React", "RAG", "LangChain", "AI Agents", "PostHog", "Testing"]
+    },
+    {
+      "id": "exp-bundeswehr",
+      "date": "Jul 2021 – Jun 2022",
+      "now": false,
+      "role": "Voluntary Military Service",
+      "company": "German Armed Forces (Bundeswehr)",
+      "location": "Wunstorf, Germany",
+      "description": "",
+      "tech": []
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-master",
+      "date": "Since Oct 2025",
+      "now": true,
+      "title": "M.A. Business Innovation & Technology",
+      "institution": "Hochschule Bielefeld",
+      "detail": null
+    },
+    {
+      "id": "edu-bachelor",
+      "date": "Aug 2022 – Sep 2025",
+      "now": false,
+      "title": "B.Sc. Business Information (work-integrated)",
+      "institution": "Hochschule Bielefeld",
+      "detail": "Final grade: 1.7"
+    },
+    {
+      "id": "edu-abitur",
+      "date": "2013 – Jun 2021",
+      "now": false,
+      "title": "Abitur (General University Entrance Qualification)",
+      "institution": "Kreisgymnasium Halle (Westf.)",
+      "detail": null
+    }
+  ]
+}

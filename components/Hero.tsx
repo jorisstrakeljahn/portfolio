@@ -63,7 +63,7 @@ export default function Hero() {
           </h1>
 
           <p className={styles.subheadline}>
-            A guy who builds stuff.
+            A guy who builds stuff online.
           </p>
 
           <p className={styles.age}>

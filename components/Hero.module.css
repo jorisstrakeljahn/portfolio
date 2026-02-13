@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Background image layer */

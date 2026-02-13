@@ -1,31 +1,79 @@
-.card {
-  max-width: 640px;
-  margin-inline: auto;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--color-code-bg);
-  box-shadow: var(--shadow-lg);
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-20);
+  align-items: flex-start;
 }
 
-.header {
+/* ===== Left: Text ===== */
+.left {
+  padding-top: var(--space-4);
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--color-text);
+  margin-bottom: var(--space-8);
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.beliefs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.belief {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.belief strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ===== Right: Code Card ===== */
+.right {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-6));
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #0c0c0e;
+  border: 1px solid #1e1e22;
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.cardHeader {
   display: flex;
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
-  background: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .dots {
   display: flex;
-  gap: var(--space-2);
+  gap: 6px;
 }
 
 .dot {
   width: 12px;
   height: 12px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.15);
 }
 
 .dot:first-child {
@@ -43,16 +91,129 @@
 .filename {
   font-size: var(--text-xs);
   font-family: var(--font-mono);
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.3);
+  flex: 1;
 }
 
-.code {
-  padding: var(--space-6);
-  margin: 0;
-  overflow-x: auto;
+.langTabs {
+  display: flex;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+}
+
+.langTab {
+  font-size: 0.7rem;
   font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
-  color: var(--color-code-text);
-  tab-size: 2;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.35);
+  background: transparent;
+  cursor: pointer;
+  transition: color var(--transition-fast), background var(--transition-fast);
+  border: none;
+}
+
+.langTab:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.langTabActive {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-accent);
+}
+
+/* ===== Code Area ===== */
+.code {
+  padding: var(--space-5) var(--space-6);
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.75;
+  height: 480px;
+  white-space: pre;
+  tab-size: 4;
+}
+
+/* ===== Syntax Highlighting — One Dark Pro inspired ===== */
+.tkKeyword {
+  color: #c678dd;
+  font-weight: 500;
+}
+
+.tkString {
+  color: #98c379;
+}
+
+.tkComment {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.tkFn {
+  color: #61afef;
+}
+
+.tkType {
+  color: #e5c07b;
+}
+
+.tkNumber {
+  color: #d19a66;
+}
+
+.tkPunct {
+  color: #7a808a;
+}
+
+.tkPlain {
+  color: #abb2bf;
+}
+
+/* ===== Cursor ===== */
+.cursor {
+  color: var(--color-accent);
+  animation: blink 0.8s step-end infinite;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+    display: none;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .right {
+    position: static;
+  }
+
+  .code {
+    height: 400px;
+    padding: var(--space-4) var(--space-4);
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .code {
+    height: 360px;
+    font-size: 0.7rem;
+    line-height: 1.65;
+  }
 }
