@@ -1,6 +1,7 @@
 .section {
   padding: var(--space-24) 0;
   position: relative;
+  z-index: 4;
 }
 
 .dark {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import styles from "./ExperienceSection.module.css";
 
 interface ExperienceEntry {
@@ -26,6 +26,46 @@ interface EducationEntry {
 interface Props {
   experience: ExperienceEntry[];
   education: EducationEntry[];
+}
+
+/* ===== Education Card with mouse-follow highlight ===== */
+function EduCard({ entry, revealClass }: { entry: EducationEntry; revealClass: string }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty("--mouse-x", `${x}%`);
+    card.style.setProperty("--mouse-y", `${y}%`);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    const card = cardRef.current;
+    if (!card) return;
+    card.style.removeProperty("--mouse-x");
+    card.style.removeProperty("--mouse-y");
+  }, []);
+
+  return (
+    <div
+      ref={cardRef}
+      className={`${styles.eduCard} ${revealClass}`}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className={styles.eduCardGlow} aria-hidden="true" />
+      <span className={styles.eduDate}>
+        {entry.now && <span className={styles.nowDot} aria-label="Current" />}
+        {entry.date}
+      </span>
+      <h3 className={styles.eduTitle}>{entry.title}</h3>
+      <p className={styles.eduInstitution}>{entry.institution}</p>
+      {entry.detail && <p className={styles.eduDetail}>{entry.detail}</p>}
+    </div>
+  );
 }
 
 export default function ExperienceSection({ experience, education }: Props) {
@@ -63,7 +103,30 @@ export default function ExperienceSection({ experience, education }: Props) {
 
   return (
     <section ref={sectionRef} id="experience" className={styles.section}>
-      <div className="container">
+      {/* ===== Floating Islands (decorative) ===== */}
+      <img
+        src="/images/island-1.png"
+        alt=""
+        aria-hidden="true"
+        className={`${styles.floatingIsland} ${styles.island1}`}
+        draggable={false}
+      />
+      <img
+        src="/images/island-2.png"
+        alt=""
+        aria-hidden="true"
+        className={`${styles.floatingIsland} ${styles.island2}`}
+        draggable={false}
+      />
+      <img
+        src="/images/island-3.png"
+        alt=""
+        aria-hidden="true"
+        className={`${styles.floatingIsland} ${styles.island3}`}
+        draggable={false}
+      />
+
+      <div className={`container ${styles.sectionContent}`}>
         {/* ===== BIG HEADING: Experience ===== */}
         <div className={`${styles.bigHeading} ${styles.reveal}`}>
           <h2 className={styles.bigTitle}>
@@ -114,22 +177,30 @@ export default function ExperienceSection({ experience, education }: Props) {
         {/* ===== EDUCATION GRID ===== */}
         <div className={styles.eduGrid}>
           {education.map((entry) => (
-            <div key={entry.id} className={`${styles.eduCard} ${styles.reveal}`}>
-              <span className={styles.eduDate}>
-                {entry.now && <span className={styles.nowDot} aria-label="Current" />}
-                {entry.date}
-              </span>
-              <h3 className={styles.eduTitle}>{entry.title}</h3>
-              <p className={styles.eduInstitution}>{entry.institution}</p>
-              {entry.detail && <p className={styles.eduDetail}>{entry.detail}</p>}
-            </div>
+            <EduCard key={entry.id} entry={entry} revealClass={styles.reveal} />
           ))}
         </div>
 
         {/* ===== CV Download ===== */}
         <div className={`${styles.cvDownload} ${styles.reveal}`}>
           <p className={styles.cvText}>Want the full picture?</p>
-          <a href="/cv.pdf" download className={styles.cvButton}>
+          <a
+            href="/images/cv-joris-strakeljahn.pdf"
+            download
+            className={styles.cvButton}
+            onClick={(e) => {
+              const btn = e.currentTarget;
+              const rect = btn.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              const ripple = document.createElement("span");
+              ripple.className = styles.ripple;
+              ripple.style.left = `${x}px`;
+              ripple.style.top = `${y}px`;
+              btn.appendChild(ripple);
+              ripple.addEventListener("animationend", () => ripple.remove());
+            }}
+          >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />

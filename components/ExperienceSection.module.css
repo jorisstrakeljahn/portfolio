@@ -4,6 +4,69 @@
   /* Pull up slightly into the hero's dark gradient area */
   margin-top: -3rem;
   z-index: 3;
+  /* Clip only horizontally so islands can extend into the next section vertically */
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+/* ===== Floating Islands (decorative background) ===== */
+.floatingIsland {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0.9;
+  filter: grayscale(0.2);
+  will-change: transform;
+}
+
+.island1 {
+  width: clamp(590px, 50vw, 1000px);
+  right: -14%;
+  top: -3%;
+  animation: floatIsland1 8s ease-in-out infinite;
+}
+
+.island2 {
+  width: clamp(600px, 46vw, 900px);
+  left: -14%;
+  top: 32%;
+  animation: floatIsland2 10s ease-in-out infinite;
+}
+
+.island3 {
+  width: clamp(440px, 46vw, 800px);
+  right: -4%;
+  top: 72%;
+  animation: floatIsland3 9s ease-in-out infinite;
+}
+
+@keyframes floatIsland1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes floatIsland2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes floatIsland3 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floatingIsland {
+    animation: none !important;
+  }
+}
+
+.sectionContent {
+  position: relative;
+  z-index: 1;
+  /* Ensure text stays readable above the high-opacity islands */
+  isolation: isolate;
 }
 
 /* ===== Reveal animation ===== */
@@ -198,6 +261,8 @@
 }
 
 .eduCard {
+  position: relative;
+  overflow: hidden;
   padding: var(--space-6);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -210,7 +275,28 @@
   box-shadow: 0 0 24px var(--color-accent-glow);
 }
 
+/* Mouse-follow highlight glow */
+.eduCardGlow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 180px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.12) 0%,
+    transparent 100%
+  );
+}
+
+.eduCard:hover .eduCardGlow {
+  opacity: 1;
+}
+
 .eduDate {
+  position: relative;
+  z-index: 1;
   font-size: var(--text-xs);
   font-family: var(--font-mono);
   color: var(--color-text-tertiary);
@@ -221,6 +307,8 @@
 }
 
 .eduTitle {
+  position: relative;
+  z-index: 1;
   font-size: var(--text-lg);
   font-weight: 700;
   color: var(--color-text);
@@ -229,11 +317,15 @@
 }
 
 .eduInstitution {
+  position: relative;
+  z-index: 1;
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
 }
 
 .eduDetail {
+  position: relative;
+  z-index: 1;
   font-size: var(--text-sm);
   color: var(--color-accent);
   font-weight: 600;
@@ -253,6 +345,8 @@
 }
 
 .cvButton {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -274,8 +368,54 @@
   box-shadow: 0 4px 20px var(--color-accent-glow);
 }
 
+.cvButton:active {
+  transform: translateY(0px) scale(0.97);
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transform: translate(-50%, -50%) scale(0);
+  animation: rippleWave 0.7s cubic-bezier(0.18, 0.89, 0.32, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes rippleWave {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.7;
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(35);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(50);
+    opacity: 0;
+  }
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
+  .island1 {
+    width: 340px;
+    right: -14%;
+  }
+
+  .island2 {
+    width: 300px;
+    left: -20%;
+  }
+
+  .island3 {
+    width: 340px;
+    right: -12%;
+  }
+
   .eduGrid {
     grid-template-columns: 1fr;
     gap: var(--space-4);

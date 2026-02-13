@@ -42,7 +42,7 @@ export default function Home() {
           education={cvData.education}
         />
 
-        <Section id="philosophy" dark>
+        <Section id="philosophy">
           <Philosophy />
         </Section>
 

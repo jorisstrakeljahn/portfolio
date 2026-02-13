@@ -42,7 +42,7 @@ export default function Header() {
 
         <div className={styles.actions}>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/jorisstrakeljahn"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.iconLink}

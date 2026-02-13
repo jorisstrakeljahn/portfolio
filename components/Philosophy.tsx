@@ -176,8 +176,8 @@ const SNIPPETS: CodeSnippet[] = [
 
 const TOKENIZED = SNIPPETS.map((s) => tokenize(s.code, s.lang));
 
-const TYPE_SPEED = 35; // ms per char — slow enough to read along
-const PAUSE_AFTER_DONE = 5000; // stay visible 5 s
+const TYPE_SPEED = 60; // ms per char — human-like typing pace
+const PAUSE_AFTER_DONE = 10000; // stay visible 10 s
 const PAUSE_BEFORE_NEXT = 600;
 
 /* ===== Token → CSS class mapping ===== */
