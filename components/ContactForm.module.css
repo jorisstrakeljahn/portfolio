@@ -123,3 +123,22 @@
 .resetBtn:hover {
   color: var(--color-accent-hover);
 }
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .form {
+    gap: var(--space-4);
+  }
+
+  .input,
+  .textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    padding: var(--space-3);
+  }
+
+  .submit {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+  }
+}

@@ -127,29 +127,31 @@
 }
 
 /* ===== Responsive ===== */
+
+/* Hide light floating islands when dark islands also disappear */
+@media (max-width: 1200px) {
+  .floatingIsland {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
   .transition {
     height: 40vw;
     margin-top: -4rem;
     margin-bottom: -8vw;
   }
+}
 
-  .islandLight1 {
-    width: 340px;
-    right: -14%;
-    opacity: 0.6;
-  }
-
-  .islandLight2 {
-    width: 300px;
-    left: -16%;
-    opacity: 0.6;
+@media (max-width: 768px) {
+  .projectsHeader {
+    margin-bottom: var(--space-6);
   }
 }
 
 @media (max-width: 640px) {
   .transition {
-    height: 50vw;
+    height: 55vw;
     margin-top: -3rem;
     margin-bottom: -6vw;
   }
@@ -160,5 +162,13 @@
 
   .projectsSubtitle {
     font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .transition {
+    height: 60vw;
+    margin-top: -2rem;
+    margin-bottom: -4vw;
   }
 }

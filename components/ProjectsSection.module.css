@@ -11,3 +11,17 @@
   font-size: var(--text-sm);
   color: var(--color-text-tertiary);
 }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: var(--space-3);
+  }
+}

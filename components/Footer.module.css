@@ -44,3 +44,29 @@
 .link:hover {
   color: var(--color-accent);
 }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--space-5) 0 var(--space-6);
+    margin-top: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .links {
+    gap: var(--space-4);
+  }
+
+  .email,
+  .copy,
+  .link {
+    font-size: var(--text-xs);
+  }
+}

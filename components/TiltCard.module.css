@@ -116,3 +116,25 @@
     width: 240px;
   }
 }
+
+@media (max-width: 480px) {
+  .wrapper {
+    margin-top: var(--space-4);
+  }
+  .card {
+    width: 200px;
+  }
+  .hitbox {
+    padding: 20px;
+    margin: -20px;
+  }
+  .bottom {
+    padding: var(--space-3) var(--space-4);
+  }
+  .name {
+    font-size: var(--text-xs);
+  }
+  .hex {
+    font-size: 0.7rem;
+  }
+}

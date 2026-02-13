@@ -400,25 +400,30 @@
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 900px) {
-  .island1 {
-    width: 340px;
-    right: -14%;
-  }
 
+/* Island-2 overlaps text first — hide earliest */
+@media (max-width: 1400px) {
   .island2 {
-    width: 300px;
-    left: -20%;
+    display: none;
   }
+}
 
+/* Remaining islands hidden below 1200px */
+@media (max-width: 1200px) {
+  .island1,
   .island3 {
-    width: 340px;
-    right: -12%;
+    display: none;
   }
+}
 
+@media (max-width: 900px) {
   .eduGrid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
+  }
+
+  .section {
+    padding-bottom: var(--space-16);
   }
 }
 
@@ -447,5 +452,45 @@
 
   .bigTitle {
     font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .bigHeading {
+    margin-bottom: var(--space-8);
+  }
+
+  .eduHeading {
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-6);
+  }
+
+  .cvDownload {
+    padding-top: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding-bottom: var(--space-10);
+    margin-top: -2rem;
+  }
+
+  .entry {
+    padding-bottom: var(--space-6);
+  }
+
+  .entryRole {
+    font-size: var(--text-lg);
+  }
+
+  .entryDesc {
+    font-size: var(--text-sm);
+  }
+
+  .chip {
+    font-size: 0.7rem;
+  }
+
+  .eduCard {
+    padding: var(--space-4);
   }
 }

@@ -204,9 +204,19 @@
   .navLink {
     font-size: var(--text-xl);
     color: var(--color-text-secondary);
+    /* Ensure touch-friendly tap targets */
+    padding: var(--space-2) var(--space-3);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 
   .burger {
     display: flex;
+  }
+
+  .iconLink {
+    min-width: 44px;
+    min-height: 44px;
   }
 }
