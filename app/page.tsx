@@ -9,14 +9,13 @@ import Footer from "@/components/Footer";
 
 import cvData from "@/content/experience.json";
 import projectsData from "@/content/projects.json";
+import styles from "./page.module.css";
 
-type ProjectStatus = "Shipped" | "In progress" | "R&D";
+type ProjectStatus = "Shipped" | "Coming soon" | "Confidential";
 
 interface ProjectLinks {
   github?: string;
-  demo?: string;
-  readme?: string;
-  available_on_request?: boolean;
+  website?: string;
 }
 
 interface Project {
@@ -46,13 +45,29 @@ export default function Home() {
           <Philosophy />
         </Section>
 
-        <Section id="projects" title="Projects" subtitle="Things I've built, am building, or exploring.">
-          <ProjectsSection projects={typedProjects} />
-        </Section>
+        <div className={styles.whiteZone}>
+          <div className={styles.transition} aria-hidden="true">
+            <div className={styles.transitionBg} />
+            <div className={styles.transitionBlur} />
+            <div className={styles.transitionFade} />
+          </div>
 
-        <Section id="contact" title="Get in Touch" subtitle="Have a project in mind? Let's talk." dark>
-          <ContactForm />
-        </Section>
+          <Section id="projects" light className={styles.projectsSection}>
+            <div className={styles.projectsHeader}>
+              <h2 className={styles.projectsTitle}>
+                My <span className={styles.projectsAccent}>Projects</span>
+              </h2>
+              <p className={styles.projectsSubtitle}>
+                Things I&apos;ve built, am building, or exploring.
+              </p>
+            </div>
+            <ProjectsSection projects={typedProjects} />
+          </Section>
+
+          <Section id="contact" title="Get in Touch" subtitle="Have a project in mind? Let's talk." light>
+            <ContactForm />
+          </Section>
+        </div>
       </main>
       <Footer />
     </>

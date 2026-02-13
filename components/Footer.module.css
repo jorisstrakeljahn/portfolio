@@ -1,5 +1,6 @@
 .footer {
-  border-top: 1px solid var(--color-border);
+  background: #ffffff;
+  border-top: 1px solid #e0e0e6;
   padding: var(--space-8) 0;
 }
 
@@ -13,7 +14,7 @@
 
 .copy {
   font-size: var(--text-sm);
-  color: var(--color-text-tertiary);
+  color: #8a8a98;
 }
 
 .links {
@@ -23,7 +24,7 @@
 
 .link {
   font-size: var(--text-sm);
-  color: var(--color-text-tertiary);
+  color: #8a8a98;
   transition: color var(--transition-fast);
 }
 

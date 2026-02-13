@@ -10,9 +10,10 @@ interface SectionProps {
   children: ReactNode;
   className?: string;
   dark?: boolean;
+  light?: boolean;
 }
 
-export default function Section({ id, title, subtitle, children, className = "", dark }: SectionProps) {
+export default function Section({ id, title, subtitle, children, className = "", dark, light }: SectionProps) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -44,9 +45,9 @@ export default function Section({ id, title, subtitle, children, className = "",
     <section
       ref={ref}
       id={id}
-      className={`${styles.section} ${dark ? styles.dark : ""} ${className}`}
+      className={`${styles.section} ${dark ? styles.dark : ""} ${light ? styles.light : ""} ${className}`}
     >
-      <div className="container">
+      <div className={`container ${light ? styles.lightContent : ""}`}>
         {title && (
           <div className={`${styles.heading} reveal`}>
             <h2 className={styles.title}>{title}</h2>

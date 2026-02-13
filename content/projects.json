@@ -1,54 +1,62 @@
 [
   {
-    "id": "proj-1",
-    "title": "DevDash",
+    "id": "trendradar",
+    "title": "Work Value Trend Radar 3D",
     "status": "Shipped",
-    "description": "A real-time developer dashboard aggregating GitHub, CI/CD, and deployment metrics into a single view.",
-    "stack": ["Next.js", "TypeScript", "WebSockets", "PostgreSQL"],
+    "description": "Interactive 3D trend radar for mapping weak signals of AI & robotics and their impact on the value of work across industries.",
+    "stack": ["TypeScript", "React", "Three.js", "Firebase", "Zustand"],
     "links": {
-      "github": "https://github.com/yourusername/devdash",
-      "demo": "https://devdash.example.com"
+      "github": "https://github.com/jorisstrakeljahn/work-value-trendradar-3d",
+      "website": "https://teal-praline-1afc8a.netlify.app/"
     }
   },
   {
-    "id": "proj-2",
-    "title": "MarkdownCMS",
+    "id": "survey-nft",
+    "title": "Survey NFT",
     "status": "Shipped",
-    "description": "A lightweight headless CMS that uses Markdown files as the content source with a live preview editor.",
-    "stack": ["React", "Node.js", "MDX", "SQLite"],
+    "description": "Decentralized survey platform with soulbound NFTs and gasless transactions via OpenGSN on Polygon. Tamper-proof, cost-free participation tracking.",
+    "stack": ["Vue 3", "TypeScript", "Solidity", "OpenGSN", "Polygon"],
     "links": {
-      "github": "https://github.com/yourusername/markdowncms",
-      "readme": "https://github.com/yourusername/markdowncms#readme"
+      "github": "https://github.com/jorisstrakeljahn/survey-nft",
+      "website": "https://vpstunden.hsbi.de/"
     }
   },
   {
-    "id": "proj-3",
-    "title": "A11y Audit Tool",
-    "status": "In progress",
-    "description": "An automated accessibility auditing CLI that generates detailed WCAG compliance reports for any URL.",
-    "stack": ["TypeScript", "Puppeteer", "Node.js", "CLI"],
+    "id": "thereforbitcoin",
+    "title": "Therefor Bitcoin",
+    "status": "Coming soon",
+    "description": "Mobile-first Bitcoin & sound-money knowledge base with premium editorial design, search-first UX, and primary sources.",
+    "stack": ["Next.js", "TypeScript", "MDX", "PostHog"],
     "links": {
-      "github": "https://github.com/yourusername/a11y-audit"
+      "github": "https://github.com/jorisstrakeljahn/thereforbitcoin"
     }
   },
   {
-    "id": "proj-4",
-    "title": "Neural Style API",
-    "status": "R&D",
-    "description": "Experimenting with neural style transfer as a REST API — upload an image, get it transformed in real time.",
-    "stack": ["Python", "FastAPI", "PyTorch", "Docker"],
+    "id": "agentsats",
+    "title": "AgentSats",
+    "status": "Coming soon",
+    "description": "Non-custodial governance layer for Bitcoin & Lightning payments by AI agents. Dashboard for monitoring and managing autonomous transactions.",
+    "stack": ["TypeScript", "Rust", "Bitcoin", "Lightning", "Node.js"],
     "links": {
-      "available_on_request": true
+      "github": "https://github.com/AgentSats"
     }
   },
   {
-    "id": "proj-5",
-    "title": "Portfolio v2",
+    "id": "portfolio",
+    "title": "Portfolio",
     "status": "Shipped",
-    "description": "This very site — built with Next.js App Router, CSS Modules, dark mode, and zero UI dependencies.",
+    "description": "This very site — built with Next.js App Router, CSS Modules, scroll animations, and zero UI dependencies.",
     "stack": ["Next.js", "TypeScript", "CSS Modules"],
     "links": {
-      "github": "https://github.com/yourusername/portfolio"
+      "github": "https://github.com/jorisstrakeljahn/portfolio"
     }
+  },
+  {
+    "id": "confidential",
+    "title": "3 More Projects",
+    "status": "Confidential",
+    "description": "Three additional projects under NDA that I can't share publicly. Happy to discuss in person.",
+    "stack": [],
+    "links": {}
   }
 ]

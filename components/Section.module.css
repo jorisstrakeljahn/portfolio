@@ -8,6 +8,34 @@
   background: var(--color-bg-secondary);
 }
 
+.light {
+  background: #ffffff;
+  padding-top: var(--space-8);
+  --color-text: #111113;
+  --color-text-secondary: #555860;
+  --color-text-tertiary: #8a8a98;
+  --color-surface: #f6f6f8;
+  --color-border: #e0e0e6;
+  --color-border-hover: #c8c8d0;
+  --color-chip-bg: #eeeef2;
+  --color-chip-text: #555860;
+  --color-accent-subtle: rgba(196, 122, 58, 0.08);
+  --color-accent-glow: rgba(196, 122, 58, 0.1);
+  --color-success: #2a9d5c;
+  --color-success-bg: #e8f5ee;
+  --color-error: #dc3545;
+  --color-error-bg: #fce8ea;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Content in light sections sits above any background layers */
+.lightContent {
+  position: relative;
+  z-index: 2;
+}
+
 .heading {
   margin-bottom: var(--space-12);
   text-align: center;
