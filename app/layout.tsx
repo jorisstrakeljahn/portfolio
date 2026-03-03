@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const SITE_URL = "https://jorisstrakeljahn.de";
+const SITE_URL = "https://www.jorisstrakeljahn.de";
 
 export const viewport: Viewport = {
   themeColor: [

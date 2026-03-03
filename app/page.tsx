@@ -35,17 +35,17 @@ const jsonLd = {
     {
       "@type": "WebSite",
       name: "Joris Strakeljahn",
-      url: "https://jorisstrakeljahn.de",
+      url: "https://www.jorisstrakeljahn.de",
       description:
         "Personal portfolio of Joris Strakeljahn — indie hacker, freelancer, and student building products on the internet.",
     },
     {
       "@type": "Person",
       name: "Joris Strakeljahn",
-      url: "https://jorisstrakeljahn.de",
+      url: "https://www.jorisstrakeljahn.de",
       jobTitle: "Full-Stack Developer & Indie Hacker",
       email: "joris.strakeljahn@web.de",
-      image: "https://jorisstrakeljahn.de/images/portrait.png",
+      image: "https://www.jorisstrakeljahn.de/images/portrait.png",
       sameAs: [
         "https://github.com/jorisstrakeljahn",
         "https://www.linkedin.com/in/joris-strakeljahn/",
