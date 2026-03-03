@@ -58,6 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@jstrakeljahnx",
     title: "Joris Strakeljahn — Developer, Indie Hacker & Freelancer",
     description:
       "Indie hacker, freelancer, and student turning ideas into real things on the internet.",
