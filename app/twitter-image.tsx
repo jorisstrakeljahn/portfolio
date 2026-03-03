@@ -102,7 +102,7 @@ export default function TwitterImage() {
               fontFamily: "monospace",
             }}
           >
-            jorisstrakeljahn.com
+            jorisstrakeljahn.de
           </div>
         </div>
       </div>

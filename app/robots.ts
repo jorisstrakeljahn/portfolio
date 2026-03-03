@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://jorisstrakeljahn.com/sitemap.xml",
+    sitemap: "https://jorisstrakeljahn.de/sitemap.xml",
   };
 }
