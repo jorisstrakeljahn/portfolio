@@ -63,7 +63,6 @@ export const metadata: Metadata = {
     description:
       "Indie hacker, freelancer, and student turning ideas into real things on the internet.",
     creator: "@jstrakeljahnx",
-    images: ["/images/portrait.png"],
   },
   robots: {
     index: true,
